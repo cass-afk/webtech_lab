@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Shop</title>
+    <style>
+    h1{
+        background-color: blue;
+        color:white;
+        text-align:center;
+    }
+    </style>
+    <script>
+        function calculate(){
+            var v1,v2,v3,v4="";
+            var sum="";
+            if (document.getElementById('apple').checked)
+            {
+                v1=parseInt(document.getElementById('apple').value);
+            } 
+            else{
+                v1 = 0;
+            }
+            if (document.getElementById('banana').checked)
+            {
+                v2=parseInt(document.getElementById('banana').value);
+            } 
+            else{
+                v2 = 0;
+            }  
+            if (document.getElementById('duck').checked)
+            {
+                v3=parseInt(document.getElementById('duck').value);
+            } 
+            else{
+                v3 = 0;
+            }
+            if (document.getElementById('coffee').checked)
+            {
+                v4=parseInt(document.getElementById('coffee').value);
+            } 
+            else{
+                v4 = 0;
+            }
+            sum=v1+v2+v3+v4;
+            document.getElementById('result').innerHTML=sum;
+        }
+    </script>
+</head>
+
+<body>
+    <h1 width="100%">Fruit Shopping</h1>
+    <table width="100%">
+        <tr>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLu6Iuu6XdGayNjAnCVrNROMBbZzxirGI3oIwYmXFFWLZ5NY4_2qjlKgNQYf2kmUs6xbk&usqp=CAU" height="200" width="100%"></td>
+            <td><input type="checkbox" id="apple" name="apple" value="150">
+                <label for="apple"> Apple Rs.150</label>
+            </td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzPiwwbjbTzzVWfxFWHB-mZ_1X5HnLg4d3Q&usqp=CAU" height="200" width="100%"></td>
+            <td>
+                <input type="checkbox" id="banana" name="banana" value="80">
+                <label for="banana"> Banana Rs.80</label>
+            </td>            
+        </tr>
+        <tr>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE859AEaEZiAF9Y7cXjMbunjWWleyXwlGu-9EVBaJd4Z-7-ri20NexeOy4Vsajl9902i4&usqp=CAU" width="100%" height="200"></td>
+            <td><input type="checkbox" id="duck" name="duck" value="50">
+                <label for="duck"> Duck Rs.50</label></td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv-X6RfrScR3iiA6_JFkAm73bS0C3ygiqF1g&usqp=CAU" width="100%" height="200"></td>
+            <td><input type="checkbox" id="coffee" name="coffee" value="100">
+                <label for="coffee"> Coffee Rs.100</label></td>
+        </tr>
+
+    </table>
+    <br><div style="text-align:center;">
+    <button style="background:blue;color:white;font-size:25px;border-radius:8px;border:none;" onclick="calculate()" >Buy</button>
+    </div>
+    <hr><br>
+    <div style="color:red;font-size:25px;text-align:center">Total Price:<span id="result"></span></div>
+    <br><hr>
+</body>
+</html>
