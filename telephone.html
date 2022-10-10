@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="text-align:center;color:blue;">Telephone Directory</h1>
+    <script>
+        var items=[];
+        var numbers=[];
+        var index=0;
+        var flag=0;
+        function save(){
+            var data=document.getElementById('data').value;
+            var no=document.getElementById('no').value;
+            for (var i=0;i<items.length;i++){
+                if(items[i]==data && numbers[i]==no){
+                    flag=1;
+                    index=i;
+                }
+            }
+            if (flag==1){
+                alertbox();
+            }
+            else{
+                items.push(data);
+                numbers.push(no);
+            }
+            view();
+        }
+        function view(){
+            var result="<ol>";
+                for(var i=0;i<items.length;i++){
+                    result+="<li>"+items[i]+" - "+numbers[i]+"</li>";
+                }
+            result+="</ol>"
+            document.getElementById('output').innerHTML=result;
+        }
+        function removeFront(){
+            items.shift();
+            numbers.shift();
+            view();
+        }
+        function removeLast(){
+            items.pop();
+            numbers.pop();
+            view();
+        }
+        function alertbox(){
+            alert("Contact already exist \r\n"+ items[index] +":" +numbers[index]);
+        }
+    </script>
+</head>
+<body style="color:blue;">
+    <div style="text-align:center;">
+    Name:<input type="text" id="data">&nbsp;&nbsp;&nbsp;&nbsp;Moblie Number:<input type="text" id="no"> 
+    <div><br><br>
+    <div style="text-align:center;">
+    <button style="background-color:blue;color: white ;padding: 15px 32px;margin: 4px 2px;" onclick="save()">Add Contact</button>
+    <button style="padding: 15px 32px;margin: 4px 2px;" onclick="removeFront()">Remove First</button>
+    <button style="padding: 15px 32px;margin: 4px 2px;" onclick="removeLast()">Remove Last</button>
+    <div><hr>
+    <div id="output" style="color: blue; font-size: 20px;text-align: center;"></div>
+    <hr>
+</body>
+</html>

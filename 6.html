@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ap.js"></script>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background-color: yellow;
+            border: 1px solid blue;
+            margin:auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Hello World!</div>
+    <br>
+Background color:<input id="bgcolor" type="color" onchange="change()">
+<br><br>
+Text Color:<input id="fontcolor" type="color" onchange="change()">
+<br><br>
+Text size: 
+<select name="size" id="tsize" onchange="change()">
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+</select>
+<br><br>
+Box width:<input type="text" id="width" onkeypress="change()"><br><br>
+Box height:<input type="text" id="height" onkeypress="change()"><br><br>
+Border Radius: <input type="range" id="radius"  onkeypress="change()">
+</body>
+</html>
