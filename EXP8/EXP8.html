@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script> var app=angular.module("myApp",[]); //module
+    app.controller("control",function($scope){
+        $scope.BMI=function(){
+            var kg=parseInt($scope.kg);
+            var cm=parseInt($scope.cm);
+            var BMI=kg/((cm/100)*(cm/100));
+            $scope.result=BMI
+            if (BMI<18){
+                $scope.result2="Underweight";
+            }
+            else if (BMI>17 && BMI<26){
+                $scope.result2="Normal";
+            }
+            else if (BMI>26 && BMI<31){
+                $scope.result2="Overweight";
+            }
+            else
+                $scope.result2="Obese";
+        }
+    });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="control" style="border-style: solid;margin: 10px;padding: 10px;">
+    <div id="b" style="background-color:#008080;color:white;"> 
+        <div style="font-size:20px;font-weight: bold;">Body mass index (BMI)<br><br>
+        </div>
+        <div>A measure of body fat in adults.</div>
+    </div>
+    <br><br>
+        Weight:
+        <br><input type="text" ng-model="kg" ng-keyup="BMI()">  kg</input>
+        <br><p ng-bind="result" style="color: #008080;float:right;font-size: 50px;"></p><br><br>
+        Height:
+        <br><input type="text" ng-model="cm" ng-keyup="BMI()" >  cm</input>
+        <br><br><br><p ng-bind="result2" style="color: #008080;margin-left: 90%;"></p><br>
+        <br><br>
+</body>
+</html>
