@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                let amt=parseInt($('#n1').val());
+                let d1=parseInt($('#rent').val());
+                let d2=parseInt($('#acc').val());
+                let d3=parseInt($('#eme').val());
+                let d4=parseInt($('#sav').val());
+                rent=d1*amt/100;
+                acc=amt*d2/100;
+                eme=amt*d3/100;
+                sav=amt*d4/100;
+                $('#a1').html("Rent:<br>Rs. "+rent);
+                $('#a2').html("Accessories:<br>Rs. "+acc);
+                $('#a3').html("Emergency:<br>Rs. "+eme);
+                $('#a4').html("Savings:<br>Rs. "+sav);
+            })
+        })
+    </script>
+    <style>
+        input[type="text"]{
+            width: 125px;
+        }
+        #a1{
+            background-color: blue;
+            color: white;
+            width:100px;
+            float: left;
+            text-align: center;
+        }
+        #a2{
+            background-color: green;
+            color: white;
+            width:100px;
+            float:left;
+            text-align: center;
+            
+        }
+        #a3{
+            background-color: blue;
+            color: white;
+            width:100px;
+            float:left;
+            text-align: center;
+        }
+        #a4{
+            background-color: hotpink;
+            color: white;
+            width:100px;
+            float:left;
+            text-align: center;
+        }
+        #btn {
+            background-color: blue; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+}
+    </style>
+    <title>EXP 7</title>
+</head>
+<body>
+    <h1 style="color:aliceblue;background-color:black;text-align: center;">Budget Calculator</h1>
+    <h2 style="text-align:center; color: black;">Enter amount you want to manage</h2>
+    <div style="text-align:center ;"><input type="text" id="n1"></div>
+    <h2 style="text-align:center; color: black;">How would you like to divide your money?</h2>
+    <div style="font-weight: bold;" style="margin-left:250px">
+    Room Rent(%) <input type="text" id="rent">
+    Accessories(%) <input type="text" id="acc">
+    Emergency(%)<input type="text" id="eme"> 
+    Saving(%)<input type="text" id="sav"> 
+    </div>
+    <br><br><div style="text-align: center;"><button  id="btn"> Evaluate my money </button></div>
+    <br><br>
+    <div style="margin-left: 450px;">
+        <span id="a1"></span>
+        <span id="a2"></span>
+        <span id="a3"></span>
+        <span id="a4" ></span>
+    </div>
+
+
+</body>
+</html>
